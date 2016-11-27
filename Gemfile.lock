@@ -1,0 +1,15 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    plist (3.2.0)
+    rake (11.3.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  plist (~> 3.2)
+  rake (~> 11.3)
+
+BUNDLED WITH
+   1.12.5
