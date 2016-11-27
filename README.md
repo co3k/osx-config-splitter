@@ -7,6 +7,7 @@ OS やアプリケーションなどにおける設定変更前後の .plist フ
 ## 0. 動作要件
 
 * Mac OSX
+* Ruby (OSX 組み込みのものでも構いません)
 * [Bundler](https://bundler.io/)
 
 ## 1. インストール手順
