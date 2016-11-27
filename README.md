@@ -11,7 +11,19 @@ OS やアプリケーションなどにおける設定変更前後の .plist フ
 
 ## 1. インストール手順
 
-プロジェクトルートで以下を実行します。
+まず、本リポジトリを clone してください。
+
+```
+$ git clone https://github.com/co3k/osx-config-splitter.git
+```
+
+その後、プロジェクトルートに移動し、
+
+```
+$ cd ./osx-config-splitter
+```
+
+以下を実行してインストールをおこないます。
 
 ```
 $ make install
