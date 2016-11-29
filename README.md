@@ -35,6 +35,7 @@ $ make install
 いまのところは以下の種類の plist の分割にのみ対応しています。
 
 * com.apple.airport.preferences.plist
+* preferences.plist
 
 まずこのプロジェクトルート直下に存在する dist を空にします (dist ディレクトリがなければこの手順を無視してください)。
 
