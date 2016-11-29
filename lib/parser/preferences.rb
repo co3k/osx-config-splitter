@@ -18,12 +18,16 @@ module ConfigSplitter
 
         FileUtils.mkdir_p(dirpath)
 
-        plist['NetworkServices'].each {|k, v|
-          userDefinedName = v['UserDefinedName']
-          filename = '%s_NetworkServices_%s.plist' % [FILENAME_BASE, userDefinedName]
-          File.write(dirpath + '/' + filename, v.to_plist);
+        plist.keys.each {|k|
+          next unless k.include? 'NetworkServices'
+
+          plist[k].each {|_, v|
+            userDefinedName = v['UserDefinedName']
+            filename = '%s_%s_%s.plist' % [FILENAME_BASE, k, userDefinedName]
+            File.write(dirpath + '/' + filename, v.to_plist);
+          }
+          plist.delete k
         }
-        plist.delete 'NetworkServices'
 
         File.write(dirpath + '/' + FILENAME_BASE + '.plist', plist.to_plist);
       end
