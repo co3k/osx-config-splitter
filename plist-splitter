@@ -1,14 +1,9 @@
 #!/usr/bin/env ruby
 
 require 'bundler/setup'
-
 require 'plist'
-require 'optparse'
 
 require './lib/monkey_patches/001_add_class_subclass.rb'
-
-opt = OptionParser.new
-opt.permute!(ARGV)
 
 if (ARGV.length != 2)
   puts "比較対象となるファイルのパス 2 つを引数に指定する必要があります。"
@@ -29,7 +24,7 @@ passed = false
 Dir['./lib/parser/*.rb'].each { |filepath|
   require filepath
 }
-ConfigSplitter::BaseParser.subclasses.each{ |class_name|
+ConfigSplitter::BaseParser.subclasses.each { |class_name|
   obj = class_name.new
 
   if obj.acceptable?(file1, file2)
